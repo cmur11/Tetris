@@ -26,7 +26,7 @@ export const TETROMINOS = {
             ],
             color: '223,173,36',
         },
-        0: {
+        O: {
             shape:[
                     ['O', 'O'],
                     ['O', 'O'],
@@ -61,7 +61,8 @@ export const TETROMINOS = {
 }
 
 export const randomTetromino = () => {
-
+    // Will produce random letter, letter is provided as key in object to return
+    // random Tetrominos from TETROMINOS object
     const tetrominos = 'IJLOSTZ';
     const randTetromino = tetrominos[Math.floor(Math.random() * tetrominos.length)]
     return TETROMINOS[randTetromino]
