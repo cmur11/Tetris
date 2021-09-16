@@ -6,7 +6,7 @@ function Cell({type}){
 
     return(
         // get color from TETROMINOS per shape, getting color proprerty
-    <StyledCell type={'L'} color={TETROMINOS['L'].color}/>
+    <StyledCell type={type} color={TETROMINOS[type].color}/>
     )
 
 
