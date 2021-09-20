@@ -1,13 +1,14 @@
 import {useState, useCallback} from 'react';
 
-import {randomTetromino} from '../tetrominos'
+import {TETROMINOS,randomTetromino} from '../tetrominos'
 import {STAGE_WIDTH} from '../gameHelpers'
 export const usePlayer = () => {
+
     const [player, setPlayer] = useState({
         // default properties
         pos: {x:0, y:0},
         // initial position of 0,0
-        tetromino: randomTetromino().shape,
+        tetromino: TETROMINOS[0].shape,
         // getting random tetromino shape
         collided: false,
     });
@@ -23,7 +24,7 @@ export const usePlayer = () => {
     
         const resetPlayer = useCallback(() =>{
             setPlayer({
-                pox: {x: STAGE_WIDTH /2 - 2, y: 0},
+                pos: {x: STAGE_WIDTH /2 - 2, y: 0},
                 tetromino: randomTetromino().shape,
                 collided: false
             })
